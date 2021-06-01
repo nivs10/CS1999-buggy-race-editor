@@ -3,6 +3,10 @@
 {% block content %}
 
   <h1>Make buggy</h1>
+  
+  <p>
+    {{ msg }}
+  </p>
 
   <form action="/new" method="post">
   
@@ -10,13 +14,18 @@
     <input type="text" name="qty_wheels" />
 	
     <label for="flag_color">Colour of flag:</label>
-    <input type="text" name="flag_color" />
+    <input type="color" name="flag_color" />
 	
 	<label for="flag_color_secondary">Secondary colour of flag:</label>
-    <input type="text" name="flag_color_secondary" />
+    <input type="color" name="flag_color_secondary" />
 	
 	<label for="flag_pattern">Pattern of flag:</label>
-    <input type="text" name="flag_pattern" />
+    <select name="flag_pattern">
+      <option value="Striped">Striped</option>
+      <option value="Spotted">Spotted</option>
+      <option value="Checkered">Checkered</option>
+      <option value="Wavy">Wavy</option>
+    </select>
 	
     <input type="submit" class="button">
 	

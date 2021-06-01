@@ -32,7 +32,7 @@ def create_buggy():
         flag_color_secondary = request.form['flag_color_secondary']
         flag_pattern = request.form['flag_pattern']
 
-        while isinstance(qty_wheels, int) == True:
+        while qty_wheels.isdigit():
             try:
                 with sql.connect(DATABASE_FILE) as con:
                     cur = con.cursor()
@@ -49,7 +49,8 @@ def create_buggy():
                 con.close()
             return render_template("updated.html", msg = msg)
         else:
-            msg = "invalid entry"
+            msg = "invalid entry, please try again"
+            return render_template("buggy-form.html", msg = msg)
 
 #------------------------------------------------------------
 # a page for displaying the buggy
