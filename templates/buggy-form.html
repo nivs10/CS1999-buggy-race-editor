@@ -11,16 +11,17 @@
   <form action="/new" method="post">
   
     <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
+    <input type="text" name="qty_wheels" value={{ buggy['qty_wheels'] }} />
 	
     <label for="flag_color">Colour of flag:</label>
-    <input type="color" name="flag_color" />
+    <input type="color" name="flag_color" value={{ buggy['flag_color'] }} />
 	
 	<label for="flag_color_secondary">Secondary colour of flag:</label>
-    <input type="color" name="flag_color_secondary" />
+    <input type="color" name="flag_color_secondary" value={{ buggy['flag_color_secondary'] }} />
 	
 	<label for="flag_pattern">Pattern of flag:</label>
-    <select name="flag_pattern">
+    <select name="flag_pattern" value={{ buggy['flag_pattern'] }} >
+	  <option value={{ buggy['flag_pattern'] }} selected hidden>{{ buggy['flag_pattern'] }}</option>
       <option value="Striped">Striped</option>
       <option value="Spotted">Spotted</option>
       <option value="Checkered">Checkered</option>
