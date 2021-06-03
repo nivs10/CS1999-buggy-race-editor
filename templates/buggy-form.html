@@ -21,11 +21,10 @@
 	
 	<label for="flag_pattern">Pattern of flag:</label>
     <select name="flag_pattern" value={{ buggy['flag_pattern'] }} >
-	  <option value={{ buggy['flag_pattern'] }} selected hidden>{{ buggy['flag_pattern'] }}</option>
-      <option value="Striped">Striped</option>
-      <option value="Spotted">Spotted</option>
-      <option value="Checkered">Checkered</option>
-      <option value="Wavy">Wavy</option>
+      <option value="vstripe" {% if buggy['flag_pattern'] == "vstripe" %} selected {% endif %}>Vertically Striped</option>
+      <option value="spot" {% if buggy['flag_pattern'] == "spot" %} selected {% endif %}>Spotted</option>
+      <option value="checker" {% if buggy['flag_pattern'] == "checker" %} selected {% endif %}>Checkered</option>
+      <option value="hstripe" {% if buggy['flag_pattern'] == "hstripe" %} selected {% endif %}>Horizontally Striped</option>
     </select>
 	
     <input type="submit" class="button">
