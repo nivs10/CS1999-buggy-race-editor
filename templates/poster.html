@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  .cs1999-tasks {
+    border-top: 1px solid black;
+    margin-top: 4em;
+  }
+  .cs1999-tasks .task {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+  }
+  .cs1999-tasks .task h2 {
+    border-bottom: 3px solid gray;
+  }
+</style>
+
+<!-- see tech note about the poster:  
+      https://rhul-cs-projects.github.io/CS1999-buggy-race-server/                -->
+<!--                                                                              -->
+<!-- anything you want here: make it beautiful! make it appealing! make it clear! -->
+<!-- you can drop images into static/assets if you want... and access them        -->
+<!-- here with <img src="/static/image-filename.png" alt="diagram" />             -->
+<!--                                                                              -->
+<!-- Of course you can edit static/app.css too if you want. It's your webserver,  -->
+<!--                                                                              -->
+<!-- Maybe... delete all these comments too :-)                                   -->
+
+
+<!-- below this point keep this section tag and paste in a <div> for every        -->
+<!-- task you attempted.                                                          -->
+
+<section class="cs1999-tasks">
+
+  <div class="task">
+    <h2>0-GET Get the source code</h2>
+    <p>
+      I forked the repo on GitHub and then used <code>git clone</code> to make a local copy.
+    </p>
+    <p>
+      Once the repo was on my own machine I was able to commit changes to version control
+      as I went along, and I pushed back up to my GitHub repo at the end of each day.
+      I followed GitHub's instructions and set up a SSH key so I didn't need to enter
+      username and password every time I pushed.
+    </p>
+  </div>
+  <div class="task">
+	<h2>0-GET Get the source code</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+	</div>
+
+  <div class="task">
+	<h2>0-RUN Get app running and view it in a browser</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>0-CHANGE Make a change to a template and see it appear</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>1-ADD Add more data to the form</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		Had an issue with starting <code>init_db.py</code>, the first time round. After trying to launch it again, it now correctly works. I've also added more options to the buggy form.
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>1-VALID Add basic data validation</h2>
+	<p>
+		Added a while loop with an else clause to prevent non-digit entries into the 'Number of wheels' box as a form of validation. Also limited the pattern choices to a set drop down list and the colour options to a colour picker - this would prevent any unwanted entries.
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>1-STYLE Style your editor just how you like it</h2>
+	<p>
+		Made changes to the CSS file as per personal choice.
+	</p>
+	<p>
+		 I personally like a flatter and cleaner looking UI.
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>2-EDIT Edit the record by loading its current values into the form</h2>
+	<p>
+		The previous entry is show in the entry form for ease of use.
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>2-FORM Make the form better</h2>
+	<p>
+		Fixed the flag pattern issue, regarding the specification-accurate values.
+	</p>
+	<p>
+		Otherwise, the form was already quite user friendly like with the colour picker for the buggy colours.
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>2-COST Calculate and save the game cost of the buggy</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>2-RULES Add validation according to the game rules</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-ENV Switch between dev and production environments</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-AUTOFILL Add auto-fill to the edit forms</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-MULTI Allow different buggies to be created</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-DEL Allow buggies to be deleted</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-FLAG Display the pennant graphically</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>3-TESTS Write some tests</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>4-USERS Add users (and sessions) so you know who is editing a buggy</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>4-REGISTER Make a new user</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>4-OWNER A buggy belongs to a user</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>4-PASS Add password protection to the users</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>5-VIZ Visual representation of the buggy</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>5-RESET Password reset</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>5-RACELOG Store a history of race results for the buggies in your app</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>5-ADMIN Add admin capabilities to superusers</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>5-API Use the server API for submitting the buggy data</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+  <div class="task">
+	<h2>6-FREE Add custom features to the editor</h2>
+	<p>
+		<!-- sentence on _how_ you fixed it -->
+	</p>
+	<p>
+		<!-- sentence(s) on anything interesting/incomplete you did -->
+	</p>
+  </div>
+
+<!-- this closes the section: keep it in! -->
+</section>
+
+  <p>
+    <a href="/" class="button">home</a>
+  </p>
+
+{% endblock %}
