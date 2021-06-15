@@ -115,10 +115,22 @@ def cost():
     return int(total_buggy_cost)
 
 #------------------------------------------------------------
-# Rules
+# Power Rules
 #------------------------------------------------------------
-
-    #TBC
+def power_rules(power_type, aux_power_type, power_units, aux_power_units):
+    if (power_type in ['fusion', 'thermo', 'rocket', 'solar', 'wind'] and power_units > 1) or (aux_power_type in ['fusion', 'thermo', 'rocket', 'solar', 'wind'] and aux_power_units > 1):
+        return False
+    else:
+        return True
+        
+#------------------------------------------------------------
+# Colour Rules
+#------------------------------------------------------------
+def colour_rules(flag_color, flag_color_secondary, flag_pattern):
+    if flag_pattern != 'plain' and flag_color == flag_color_secondary:
+        return False
+    else:
+        return True
 
 #------------------------------------------------------------
 # creating a new buggy:
@@ -136,27 +148,27 @@ def create_buggy():
         return render_template("buggy-form.html", buggy = record)
     elif request.method == 'POST':
         msg=""
-        qty_wheels = request.form['qty_wheels']
+        qty_wheels = int(request.form['qty_wheels'])
         power_type = request.form['power_type']
-        power_units = request.form['power_units']
+        power_units = int(request.form['power_units'])
         aux_power_type = request.form['aux_power_type']
-        aux_power_units = request.form['aux_power_units']
-        hamster_booster = request.form['hamster_booster']
+        aux_power_units = int(request.form['aux_power_units'])
+        hamster_booster = int(request.form['hamster_booster'])
         flag_color = request.form['flag_color']
         flag_pattern = request.form['flag_pattern']
         flag_color_secondary = request.form['flag_color_secondary']
         tyres = request.form['tyres']
-        qty_tyres = request.form['qty_tyres']
+        qty_tyres = int(request.form['qty_tyres'])
         armour = request.form['armour']
         attack = request.form['attack']
-        qty_attacks = request.form['qty_attacks']
+        qty_attacks = int(request.form['qty_attacks'])
         fireproof = request.form['fireproof']
         insulated = request.form['insulated']
         antibiotic = request.form['antibiotic']
         banging = request.form['banging']
         algo = request.form['algo']
 
-        while qty_wheels.isdigit():
+        while qty_tyres >= qty_wheels and power_rules(power_type, aux_power_type ,power_units, aux_power_units) and colour_rules(flag_color, flag_color_secondary, flag_pattern):
             try:
                 with sql.connect(DATABASE_FILE) as con:
                     cur = con.cursor()
@@ -174,8 +186,13 @@ def create_buggy():
                 con.close()
             return render_template("updated.html", msg = msg)
         else:
-            msg = "invalid entry, please try again"
-            return render_template("buggy-form.html", msg = msg)
+            con = sql.connect(DATABASE_FILE)
+            con.row_factory = sql.Row
+            cur = con.cursor()
+            cur.execute("SELECT * FROM buggies")
+            record = cur.fetchone(); 
+            msg = "Invalid entry: You might have added more wheels than tyres, put more than one unit for renewable power types or put the same two colours when the pattern wasn't plain. Please try again."
+            return render_template("buggy-form.html", msg = msg, buggy = record)
 
 #------------------------------------------------------------
 # a page for displaying the buggy

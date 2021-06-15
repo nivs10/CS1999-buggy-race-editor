@@ -11,7 +11,7 @@
   <form action="/new" method="post">
   
     <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" value={{ buggy['qty_wheels'] }} />
+    <input type="number" min="4" step="2" name="qty_wheels" value={{ buggy['qty_wheels'] }} />
 	
 	<label for="power_type">Power Type:</label>
     <select name="power_type" value={{ buggy['power_type'] }} >
@@ -28,7 +28,7 @@
     </select>
 	
     <label for="power_units">Power Units:</label>
-    <input type="text" name="power_units" value={{ buggy['power_units'] }} />
+    <input type="number" min="1" name="power_units" value={{ buggy['power_units'] }} />
 	
 	<label for="aux_power_type">Aux Power Type:</label>
     <select name="aux_power_type" value={{ buggy['aux_power_type'] }} >
@@ -45,10 +45,10 @@
     </select>
 	
     <label for="aux_power_units">Aux Power Units:</label>
-    <input type="text" name="aux_power_units" value={{ buggy['aux_power_units'] }} />
+    <input type="number" min="0" name="aux_power_units" value={{ buggy['aux_power_units'] }} />
 	
     <label for="hamster_booster">Hamster Boosters:</label>
-    <input type="text" name="hamster_booster" value={{ buggy['hamster_booster'] }} />
+    <input type="number" min="0" name="hamster_booster" value={{ buggy['hamster_booster'] }} />
 	
     <label for="flag_color">Colour of flag:</label>
     <input type="color" name="flag_color" value={{ buggy['flag_color'] }} />
@@ -59,6 +59,8 @@
       <option value="spot" {% if buggy['flag_pattern'] == "spot" %} selected {% endif %}>Spotted</option>
       <option value="checker" {% if buggy['flag_pattern'] == "checker" %} selected {% endif %}>Checkered</option>
       <option value="hstripe" {% if buggy['flag_pattern'] == "hstripe" %} selected {% endif %}>Horizontally Striped</option>
+	  <option value="dstripe" {% if buggy['flag_pattern'] == "dstripe" %} selected {% endif %}>Diagonally Striped</option>
+	  <option value="plain" {% if buggy['flag_pattern'] == "plain" %} selected {% endif %}>Plain</option>
     </select>
 	
 	<label for="flag_color_secondary">Secondary colour of flag:</label>
@@ -74,7 +76,7 @@
     </select>
 	
 	<label for="qty_tyres">No. of Tyres:</label>
-    <input type="text" name="qty_tyres" value={{ buggy['qty_tyres'] }} />
+    <input type="number" min="4" step="2" name="qty_tyres" value={{ buggy['qty_tyres'] }} />
 	
 	<label for="armour">Armour:</label>
     <select name="armour" value={{ buggy['armour'] }} >
@@ -96,7 +98,7 @@
     </select>
 	
 	<label for="qty_attacks">No. of Attacks:</label>
-    <input type="text" name="qty_attacks" value={{ buggy['qty_attacks'] }} />
+    <input type="number" min="0" name="qty_attacks" value={{ buggy['qty_attacks'] }} />
 	
 	<label for="fireproof">Fireproofing:</label>
     <select name="fireproof" value={{ buggy['fireproof'] }} >
