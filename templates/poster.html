@@ -17,22 +17,30 @@
   }
 </style>
 
-<!-- see tech note about the poster:  
-      https://rhul-cs-projects.github.io/CS1999-buggy-race-server/                -->
-<!--                                                                              -->
-<!-- anything you want here: make it beautiful! make it appealing! make it clear! -->
-<!-- you can drop images into static/assets if you want... and access them        -->
-<!-- here with <img src="/static/image-filename.png" alt="diagram" />             -->
-<!--                                                                              -->
-<!-- Of course you can edit static/app.css too if you want. It's your webserver,  -->
-<!--                                                                              -->
-<!-- Maybe... delete all these comments too :-)                                   -->
-
-
 <!-- below this point keep this section tag and paste in a <div> for every        -->
 <!-- task you attempted.                                                          -->
 
 <section class="cs1999-tasks">
+  <h1>*The* Buggy Editor</h1>
+  <h2>
+	A practical buggy editor that avoids headaches.
+  </h2>
+  <p>
+	My buggy editor's form has intuitive input methods: a colour picker for colours, drop down lists for limited options and integer only inputs for where you'd expect them.
+  </p>
+  <h2>
+	Clean inputs - clean JSON
+  </h2>
+  <p>
+	The carefulyl guided form means that you're less prone to getting undesired entries in the .json file for your buggy.
+  </p>
+  <h2>
+	It's in green.
+  </h2>
+  <p>
+	"nuff said" - Stan Lee, legend
+  </p>
+
 
   <div class="task">
     <h2>0-GET Get the source code</h2>
@@ -48,17 +56,17 @@
   <div class="task">
 	<h2>0-RUN Get app running and view it in a browser</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		I opened CMD with administrator privledges to run commands for running the app.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		I first installed the required Python modules from <code>requirements.txt</code>, then I ran <code>Python init_db.py</code> in my terminal to start my database. Finally, I ran <code>Python app.py</code> to run the program and went to <code>http://localhost:5000/</code> to view the app in a browser.
 	</p>
   </div>
 
   <div class="task">
 	<h2>0-CHANGE Make a change to a template and see it appear</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Added a new paragraph to <code>index.html</code>.
 	</p>
 	<p>
 		<!-- sentence(s) on anything interesting/incomplete you did -->
@@ -68,7 +76,7 @@
   <div class="task">
 	<h2>1-ADD Add more data to the form</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Added more options to the form for the user to customise.
 	</p>
 	<p>
 		Had an issue with starting <code>init_db.py</code>, the first time round. After trying to launch it again, it now correctly works. I've also added more options to the buggy form.
@@ -78,10 +86,10 @@
   <div class="task">
 	<h2>1-VALID Add basic data validation</h2>
 	<p>
-		Added a while loop with an else clause to prevent non-digit entries into the 'Number of wheels' box as a form of validation. Also limited the pattern choices to a set drop down list and the colour options to a colour picker - this would prevent any unwanted entries.
+		Added a while loop with an else clause to prevent non-digit entries into the 'Number of wheels' box as a form of validation.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		Also limited the pattern choices to a set drop down list and the colour options to a colour picker - this would prevent any unwanted entries.
 	</p>
   </div>
 
@@ -98,10 +106,10 @@
   <div class="task">
 	<h2>2-EDIT Edit the record by loading its current values into the form</h2>
 	<p>
-		The previous entry is show in the entry form for ease of use.
+		The previous entry is shown in the entry form for ease of use.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		I added a value tag to each form option and set them to the previous entered values in the database.
 	</p>
   </div>
 
@@ -118,20 +126,28 @@
   <div class="task">
 	<h2>2-COST Calculate and save the game cost of the buggy</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Created a CSV file to refer to for the cost of each item which app.py would use to calculate the cost.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		To get 2-COST done, I had to include new options in the buggy form that would affect the cost, as per buggy rules.
 	</p>
   </div>
 
   <div class="task">
 	<h2>2-RULES Add validation according to the game rules</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Intger based rules were set in HTML while comparative rules were set in Python.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		<li>Wheels and tyres must be even and greater than or equal to four: set HTML form type to integer and setting the min to 4 and the step by 2.</li>
+
+		<li>Select power types can only have one power unit: created a Python function to validate these two, via an if-else clause, and added that to the conditional while loop that validates inputs.</li>
+
+		<li>Integer value inputs have min values set in HTML.</li>
+
+		<li>Flag colours must not be the same, unless the pattern is plain: Python function that uses an if-else clause that is used in the same conditional while loop for validating inputs.</li>
+
+		<li>Race computer algorithm cannot be 'buggy': the option is not present for the user to click on in the drop down list.</li>
 	</p>
   </div>
 
