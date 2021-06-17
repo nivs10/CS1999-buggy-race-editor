@@ -37,24 +37,13 @@
   <div class="task">
     <h2>0-GET Get the source code</h2>
     <p>
-      I forked the repo on GitHub and then used <code>git clone</code> to make a local copy.
+      I forked the repo on GitHub and then used 'clone repository', via GitHub Desktop, to make a local copy.
     </p>
     <p>
       Once the repo was on my own machine I was able to commit changes to version control
       as I went along, and I pushed back up to my GitHub repo at the end of each day.
-      I followed GitHub's instructions and set up a SSH key so I didn't need to enter
-      username and password every time I pushed.
     </p>
   </div>
-  <div class="task">
-	<h2>0-GET Get the source code</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-	</div>
 
   <div class="task">
 	<h2>0-RUN Get app running and view it in a browser</h2>
@@ -149,7 +138,7 @@
   <div class="task">
 	<h2>3-ENV Switch between dev and production environments</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Skipped to 3-MULTI
 	</p>
 	<p>
 		<!-- sentence(s) on anything interesting/incomplete you did -->
@@ -159,150 +148,20 @@
   <div class="task">
 	<h2>3-AUTOFILL Add auto-fill to the edit forms</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		Skipped to 3-MULTI
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		My form already autofills with the previous user choices or the default values that the server would assign anyways. But this is not the same as randomised options.
 	</p>
   </div>
 
   <div class="task">
 	<h2>3-MULTI Allow different buggies to be created</h2>
 	<p>
-		<!-- sentence on _how_ you fixed it -->
+		I've made an attempt at 3-MULTI and got multiple buggies saved to the database.
 	</p>
 	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>3-DEL Allow buggies to be deleted</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>3-FLAG Display the pennant graphically</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>3-TESTS Write some tests</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>4-USERS Add users (and sessions) so you know who is editing a buggy</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>4-REGISTER Make a new user</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>4-OWNER A buggy belongs to a user</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>4-PASS Add password protection to the users</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>5-VIZ Visual representation of the buggy</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>5-RESET Password reset</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>5-RACELOG Store a history of race results for the buggies in your app</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>5-ADMIN Add admin capabilities to superusers</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>5-API Use the server API for submitting the buggy data</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
-	</p>
-  </div>
-
-  <div class="task">
-	<h2>6-FREE Add custom features to the editor</h2>
-	<p>
-		<!-- sentence on _how_ you fixed it -->
-	</p>
-	<p>
-		<!-- sentence(s) on anything interesting/incomplete you did -->
+		I switched from using fetchone() to using fetchall(). This unfortunately broke my cost() function and it is now stuck calculating for the first buggy stored in the database for all the buggies. I also did not manage to give the user a way to edit their buggies.
 	</p>
   </div>
 

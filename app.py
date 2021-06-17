@@ -21,12 +21,6 @@ def home():
 #------------------------------------------------------------
 
 def cost():
-    con = sql.connect(DATABASE_FILE)
-    con.row_factory = sql.Row
-    cur = con.cursor()
-    cur.execute("SELECT * FROM buggies")
-    record = cur.fetchone()
-    
     buggy_cost_file = 'buggy_cost.csv'
     lines = open(buggy_cost_file).readlines()
    
@@ -40,6 +34,12 @@ def cost():
         else:
             items.append(str(option))
             costs.append(int(price))
+    
+    con = sql.connect(DATABASE_FILE)
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM buggies")
+    record = cur.fetchone()
     
     qty_wheels = record['qty_wheels']
     power_type = record['power_type']
@@ -84,10 +84,8 @@ def cost():
     total_hamster_booster_cost = hamster_booster * hamster_booster_cost
     total_tyres_cost = qty_tyres * tyres_cost
     total_attack_cost = qty_attacks * attack_cost
-	
-    if armour_cost > 4:
-	    total_armour_cost = armour_cost * (1 + (0.1 * (qty_tyres - 4)))
-    
+    total_armour_cost = armour_cost * (1 + (0.1 * (qty_tyres - 4)))
+ 
     if fireproof == 'true':
         fireproof_cost = costs[fireproof_location]
     else:
@@ -171,14 +169,20 @@ def create_buggy():
         while qty_tyres >= qty_wheels and power_rules(power_type, aux_power_type ,power_units, aux_power_units) and colour_rules(flag_color, flag_color_secondary, flag_pattern):
             try:
                 with sql.connect(DATABASE_FILE) as con:
+                    print('step one')
                     cur = con.cursor()
+                    print('step two')
                     cur.execute(
-                        "UPDATE buggies set qty_wheels=?, power_type=?, power_units=?, aux_power_type=?, aux_power_units=?, hamster_booster=?, flag_color=?, flag_pattern=?, flag_color_secondary=?, tyres=?, qty_tyres=?, armour=?, attack=?, qty_attacks=?, fireproof=?, insulated=?, antibiotic=?, banging=?, algo=? WHERE id=?",
-                        (qty_wheels, power_type, power_units, aux_power_type, aux_power_units, hamster_booster, flag_color, flag_pattern, flag_color_secondary, tyres, qty_tyres, armour, attack, qty_attacks, fireproof, insulated, antibiotic, banging, algo, DEFAULT_BUGGY_ID)
+                        'INSERT INTO buggies (qty_wheels, power_type, power_units, aux_power_type, aux_power_units, hamster_booster, flag_color, flag_pattern, flag_color_secondary, tyres, qty_tyres, armour, attack, qty_attacks, fireproof, insulated, antibiotic, banging, algo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                        (qty_wheels, power_type, power_units, aux_power_type, aux_power_units, hamster_booster, flag_color, flag_pattern, flag_color_secondary, tyres, qty_tyres, armour, attack, qty_attacks, fireproof, insulated, antibiotic, banging, algo,)
                     )
+                    print('step three')
                     con.commit()
+                    print('step four')
                     buggy_cost = cost()
+                    print('step five')
                     msg = f"Record successfully saved - Your current is cost is {buggy_cost}"
+                    print('step six')
             except:
                 con.rollback()
                 msg = "error in update operation"
@@ -203,8 +207,8 @@ def show_buggies():
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("SELECT * FROM buggies")
-    record = cur.fetchone(); 
-    return render_template("buggy.html", buggy = record, buggy_cost = cost())
+    records = cur.fetchall(); 
+    return render_template("buggy.html", buggies = records, buggy_cost = cost())
 
 #------------------------------------------------------------
 # a placeholder page for editing the buggy: you'll need
